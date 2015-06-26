@@ -1,0 +1,247 @@
+VIM HELP
+========
+
+## GENERAL:
+
+* Note: Most commands can have a number prepended to it (like 5j)
+
+### FILE:
+:n             - open a new file  (can have file param)
+:e             - edit a file (can have file param) (same as :n, but requires a file)
+vim <file>     - edit / open a file
+vim <file URL> - edit / open a file (like vim http://google.com)
+
+### MOVEMENT:
+hjkl    - left down up right
+H       - move to top of screen
+L       - move to bottom of screen
+G       - goto EOF
+O       - move to the beginning of line
+^       - move to first non-space char
+$       - move to end of line
+w       - move to next word
+b       - move to last word
+e       - move to next word (last letter)
+f<x>    - find next letter in line (stops on it)
+F<x>    - find last letter in line (stops on it)
+t<x>    - ^^ stops before the char entered (like f)
+;       - repeat last f search
+,       - repeat last f search (backwards)
+:$      - move to last line of file
+:#,#G   - move to line #
+B       - go to beginning word
+b       - same as B, and stops at punctuation and chars
+W       - go to end of word
+w       - same as W, and stops at punctuation and chars
+I       - go in front of line (insert mode)
+A       - go in back of line (insert mode)
+``      - Jump between last line states
+^o      - jump cursor backward
+^i      - jump cursor forward
+%       - jump matching bracket
+{       - go to beggining of paragraph
+}       - go to end of paragraph
+g<CMD>  - goto command (and more)
+    d - search word under cursor (first occurance)
+    * - ^^ (next occurance) (or just *, not g*)
+    # - ^^ (previous occurance) (or just #, not g#)
+        n - go to next occurance
+        N - go to previous occurance
+    (note: to set up definition jumping, like in c, ctags need to be set up)
+    e - move to last word (last letter)
+    g - go to top of file
+    ; - move back through changelist
+    , - move forward though changelist
+
+### PAGE:
+zz,z.,M - bring current line to middle of screen
+zt,H    - bring current line to top of screen
+zb,L    - bring current line to bottom of screen
+^e      - move screen up one line
+^y      - move screen down one line
+^u      - move up 1/2 page
+^d      - move down 1/2 page
+^b      - move up 1 page // currently replaced with NERDTree
+^f      - move down 1 page // currently replaced with "cciw"
+
+### INSERT:
+i   - insert
+I   - insert to begging of line
+a   - append
+A   - append to EOL
+o   - create new line under current line
+O   - create new line above current line
+s   - delete char under cursor and insert
+S   - delete line under cursor and insert
+^o  - apply one normal command, then go back into insert
+^i  - tab
+
+### EDIT:
+y       - copy char
+yy,Y    - copy lines
+ye,yw,yb- copy words
+dd      - cut lines
+p       - paste buffer
+x       - delete current letter on cursor
+dw,db,de- delete word on cursor
+r       - replace on cursor
+R       - replace until ESC
+D       - delete rest of line after cursor
+=       - auto indent
+    a{  - indent code stack
+    %,ap- indent paragrap
+<<      - indent left
+>>      - indent right
+u       - undo
+^r      - redo
+~       - upper/lower case letter
+dw      - delete word
+cw      - change word (like delete, but goto insert)
+ci<x>   - change between <x> (ci" for " ... ")
+cit     - change between tags
+>i{     - increase inner block indent
+<i{     - decrease inner block indent
+Tricks:
+yyp     - duplicate line
+ggVG    - select all
+<CMD>ap - do something to a paragraph block (etc, =ap will auto indent paragraph block)
+
+### SEARCH:
+/   - search forwards
+?   - search backwards
+    n - move to next occurrence
+    N - moce to previous occurrence
+:% s/find/replace/g - find/replace ALL occurrences in a file
+:x-x ^^ number of lines
+:. ^^ current line
+
+### SESSIONS:
+:mksession ~/session.vim  - make a session
+:source ~/session.vim     - bring session back
+    (vim -S ~/session.vim)
+
+### VISUAL:
+v       - visual character (use standard movement to move around)
+^v      - visual block (exact)
+shift+V - visual line
+    I - insert text before the selected block
+    A - insert text after the selected block
+    s - replace text
+gv       - re-select last selected visual area
+vi<punct>- select all text in <punct> like vi{ to select all inside of braces
+vi(p     - selct all (this) and replace with the pasted text
+
+### BUFFERS:
+(use :e or :n to create new buffers)
+:ls     - list buffers
+:b <buffer> - open buffer
+:bp     - move to previous buffer
+:bn     - move to next buffer
+
+### TABS (uses buffers):
+:tabnew - New tab (can have file param)
+:tabe   - edit file in a new tab  (can have file param) (same as tabnew, but requires a file)
+gt      - next tab (^l in vimrc)
+gT      - previous tab (^h in vimrc)
+
+### SPLIT (uses buffers):
+:split,:sp  - split horizontally (can have file param)
+:vsplit,:vs - split vertically (can have file param)
+^ww         - move between splits
+^w<hjkl>    - move between splits using movement keys
+^wr     - swap top/bottom or left/right split
+^wt     - break out current window into a new tabview
+^wo     - close every window in the current tabview but the current one
+^w=     - normalize split sizes
+
+### MACROS:
+q<x>    - record macro into char <x> (and stop recording macro)
+@<x>    - play macro
+@@      - play last macro
+#@(@)   - replay last macro # times
+
+## ADDONS:
+
+### EASYMOTION:
+\\  - handler with movement (ex: \\f{char})
+
+### NERD TREE:
+^n  - Open tree
+t   - open file in new tab
+s   - open file in vertical split
+i   - open file in horizontal split
+R   - refresh tree
+I   - toggle hidden files
+
+### vim-multiple-cursors
+^n  - in normal mode, press to activate for a word
+    - pressing ^n more times will find the same match and highlight.
+    - in visual mode, press to active by lines
+AFTER ^n:
+v   - go back into normal mode
+c, s, i, a, I, A, all work as expected. (I, A will NOT work in visual mode, pressing v should "fix" that)
+hjkl - moving in the mode will move the cursors itself
+BUGS:
+If there are "dead cursors" on the screen, press ^n to remove them
+
+### Emmet
+^y, - activate Emmet as expected.
+
+### closetag.vim
+^_  - (note: not ^- (its CTRL+SHIFT+-)) Checks for an xml/html tag, and will generate a closing tag
+
+### vim-surround
+ysiw<x>,^f  - insert <x> around a word
+yss<x>      - insert <x> around a line
+cs<x><y>    - replace <x> inside a <x>...<x> with <y>...<y>
+    cst<x>  - replace an xml/html tag with <x>
+ds<x>       - remove <x> contained within <x>
+Visual:
+S<x>    - insert <x> around a highlighted section
+
+### Tabularize
+\a<key><cr> -   equaly space a symbol
+https://raw.githubusercontent.com/godlygeek/tabular/master/doc/Tabular.txt
+
+### OTHER:
+:!wc %         - count number words
+:!fmt %        - simple text formatting
+:%s/foo/bar/g  - Find each occurrence of 'foo' (in all lines), and replace it with 'bar'.
+    ex: :norm @p to apply to multiple lines
+.              - repeat last command
+:%y+           - copy all lines in file
+:source $VIMRC - reload with vimrc
+:g/pattern/cmd - Use a command (ex: :d) after a pattern (ex: :g/pattern/:d)
+:w !sudo tee % - apply sudo to a file if you forgot to do so previously
+:earlier 15m   - reverts the document back to how it was 15 minutes ago.
+:later         - goes back to current document time
+:.! <command>  - dump output into current window
+:%!xxd         - make vim into a hex editor
+:%!xxd -r      - revert hex editor
+q:             - look at command history
+:%TOhtml       - create html rendering of file
+^Z,:sh         - go to a shell
+    fg         - return back to vim
+The Vim language can be used in vim, ex:
+:for i in range(1,255) | .put='10.0.0.'.i | endfor
+
+## Saving
+:w          - save
+:wq,:x,ZZ   - save and quit
+:q!,ZQ      - quit w/o saving
+
+## Vim command line
+vim +<command><parameter> file  - execute a vim command after opening the file
+    - Ex: vim +/install README.txt will execult /install when opening the fiel.
+# Overwritten commands
+^b      - move up 1 page // currently replaced with NERDTree
+^f      - move down 1 page // currently replaced with "cciw"
+^n      - Find next match for words that start with the keyword // currently replaced with vim-multicursors
+^p      - Find previous match for words that start with the keyword // currently replaced with the nomal 'p' command (current 'p' command is modified)
+j,k    - replaced with gj,gk (in normal mode) to act like a "normal" text editor
+
+### MORE HELP:
+https://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim
+
+
+Note for the future add new repos with: git submodule add URL bundle/NAME
