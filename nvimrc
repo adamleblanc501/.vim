@@ -48,6 +48,8 @@ set t_Co=256        " Explicitly tell Vim that the terminal supports 256 colors
 
 set relativenumber
 
+set iskeyword+=-
+
 set backspace=2     " Sometimes backspace will not work properly on some systems, this is used to fix that. 
 
 "set timeout " Do time out on mappings and others
@@ -120,9 +122,6 @@ vnoremap <Right> <NOP>
 " Remove all whitespace at the EOL
 :nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
-" Run dispatch
-nnoremap <F9> :w<CR> :Dispatch<CR>
-
 " Custom commands with <leader>
 nmap <leader>e :sp $MYVIMRC<cr> " Edit vimrc
 nmap <leader>r :so $MYVIMRC<cr> " Reload vimrc
@@ -169,25 +168,6 @@ function ScssToCss()
     execute command
 endfunction
 autocmd BufWritePost,FileWritePost *.scss call ScssToCss()
-
-autocmd FileType java let b:dispatch = 'javac %'
-
-" Set up custom triggers for YCM (and vim's omnifunc)
-let g:ycm_semantic_triggers =  {
-  \   'c' : ['->', '.'],
-  \   'objc' : ['->', '.'],
-  \   'ocaml' : ['.', '#'],
-  \   'cpp,objcpp' : ['->', '.', '::'],
-  \   'perl' : ['->'],
-  \   'php' : ['->', '::', '='],
-  \   'cs,java,javascript,d,python,perl6,scala,vb,elixir,go' : ['.'],
-  \   'vim' : ['re![_a-zA-Z]+[_\w]*\.'],
-  \   'ruby' : ['.', '::'],
-  \   'lua' : ['.', ':'],
-  \   'erlang' : [':'],
-  \   'css,scss,sass' : [': '],
-  \   'html' : ['='],
-  \ }
 
 " set up custom auto close pairs
 let g:AutoClosePairs = ("() [] ` \" '")
