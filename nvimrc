@@ -52,6 +52,9 @@ set iskeyword+=-
 
 set backspace=2     " Sometimes backspace will not work properly on some systems, this is used to fix that. 
 
+set wildmenu
+set lazyredraw
+
 "set timeout " Do time out on mappings and others
 " When you’re pressing Escape to leave insert mode in the terminal, it will by default take a second or another keystroke to leave insert mode completely and update the statusline. This should fix that. I got this from: https://powerline.readthedocs.org/en/latest/tipstricks.html#vim
 " if !has('gui_running')
