@@ -31,14 +31,8 @@ set incsearch
 "set wrap
 "set linebreak
 
-set ttyfast
-" mouse support
-"set mouse=a
-"set ttymouse=xterm2
-
 set matchpairs+=<:> " Allows ci< to work between <...>
 set scrolloff=5     " Set max and min cursor position before scrolling
-set showmode
 set nohlsearch      " Dont highlight after searching
 
 set nocompatible    " Disable vi-compatibility, requires a full vim install
@@ -50,10 +44,9 @@ set relativenumber
 
 set iskeyword+=-
 
-set backspace=2     " Sometimes backspace will not work properly on some systems, this is used to fix that. 
+set backspace=2     " Sometimes backspace will not work properly on some systems, this is used to fix that.
 
-set wildmenu
-set lazyredraw
+set lazyredraw      " Don't draw the screen during macros
 
 "set timeout " Do time out on mappings and others
 " When you’re pressing Escape to leave insert mode in the terminal, it will by default take a second or another keystroke to leave insert mode completely and update the statusline. This should fix that. I got this from: https://powerline.readthedocs.org/en/latest/tipstricks.html#vim
@@ -86,14 +79,14 @@ nmap <F6> :TagbarToggle<CR>
 " Makes j and k act like normal up and down on multi-lines
 nmap j gj
 nmap k gk
-" Remap paste to auto-indent
-" Commented out because although it's nice, it will chang cursor position for simple things like 'xp'
-"nnoremap p p=`] 
-"nnoremap P P=`] 
-" normal p is now ^p
-"nnoremap <c-p> p
+" Remap ^p to auto-indent
+nnoremap ^p p=`]
+nnoremap ^P P=`]
+
 " Nerdtree as a 'panel' (all tabs)
 nmap <C-b> :NERDTreeTabsToggle<CR>
+
+" Surround.vim plugin shortcut
 nmap <C-f> ysiw
 
 " Jump lines quickly
@@ -104,6 +97,12 @@ xmap <C-k> 5k
 " Better tab switching (ctrl+key instead of g+key)
 nmap <C-l> gt
 nmap <C-h> gT
+
+" Dont put x into buffer
+nmap x "_dl
+
+" Disable Q because I dont use it
+nnoremap Q <NOP>
 
 " <C-c> instead of <Esc> because of timeout issues
 imap {<CR> {<CR>}<C-c>O
@@ -123,7 +122,10 @@ vnoremap <Left> <NOP>
 vnoremap <Right> <NOP>
 
 " Remove all whitespace at the EOL
-:nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
+" Remove all whitespace at the EOL on write
+autocmd BufWritePre * :%s/\s\+$//e
 
 " Custom commands with <leader>
 nmap <leader>e :sp $MYVIMRC<cr> " Edit vimrc
@@ -157,11 +159,11 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
-" unicode symbols
-let g:airline_left_sep  = '»'
-let g:airline_left_sep  = '▶'
-let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
+" disbale unicode symbols on airline
+let g:airline_left_sep  = ''
+let g:airline_left_sep  = ''
+let g:airline_right_sep = ''
+let g:airline_right_sep = ''
 
 " Compiles SCSS files on saving.
 function ScssToCss()
