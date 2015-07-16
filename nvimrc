@@ -14,7 +14,6 @@ set smartindent
 set smartcase
 set smarttab
 set ignorecase
-
 " 4 space tabs
 set tabstop=4
 set shiftwidth=4
@@ -48,19 +47,10 @@ set backspace=2     " Sometimes backspace will not work properly on some systems
 
 set lazyredraw      " Don't draw the screen during macros
 
-"set timeout " Do time out on mappings and others
-" When you’re pressing Escape to leave insert mode in the terminal, it will by default take a second or another keystroke to leave insert mode completely and update the statusline. This should fix that. I got this from: https://powerline.readthedocs.org/en/latest/tipstricks.html#vim
-" if !has('gui_running')
-"     set ttimeoutlen=10
-"     augroup FastEscape
-"         autocmd!
-"         au InsertEnter * set timeoutlen=0
-"         au InsertLeave * set timeoutlen=1000
-"     augroup END
-" endif
-
 filetype indent on
 filetype plugin on
+
+set omnifunc=syntaxcomplete#Complete " Set autocompletion based on languge (^x ^o)
 
 colorscheme molokai
 
@@ -79,9 +69,9 @@ nmap <F6> :TagbarToggle<CR>
 " Makes j and k act like normal up and down on multi-lines
 nmap j gj
 nmap k gk
-" Remap ^p to auto-indent
-nnoremap ^p p=`]
-nnoremap ^P P=`]
+" Remap to auto-indent (annoying when using 'xp' ... might have fixed that by disabling 'x' going to a buffer)
+nnoremap p p=`]
+nnoremap P P=`]
 
 " Nerdtree as a 'panel' (all tabs)
 nmap <C-b> :NERDTreeTabsToggle<CR>

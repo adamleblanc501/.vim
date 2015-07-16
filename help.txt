@@ -101,10 +101,17 @@ ci<x>   - change between <x> (ci" for " ... ")
 cit     - change between tags
 >i{     - increase inner block indent
 <i{     - decrease inner block indent
-Tricks:
+
+### Tricks:
 yyp     - duplicate line
 ggVG    - select all
 <CMD>ap - do something to a paragraph block (etc, =ap will auto indent paragraph block)
+Insert mode:
+^x ^o   - Autocomplete word (like html end tags)
+^x ^l   - Autocomplete line (from file)
+^x ^f   - Autocomplete filenames in current directory
+^p      - look at dictionary (supertab: press tab)
+    - ^n    - move through list
 
 ### SEARCH:
 /   - search forwards
