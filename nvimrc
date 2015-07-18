@@ -91,6 +91,8 @@ nmap <C-h> gT
 " Dont put x into buffer
 nmap x "_dl
 
+nmap q: :q
+
 " Disable Q because I dont use it
 nnoremap Q <NOP>
 

@@ -134,6 +134,7 @@ shift+V - visual line
     I - insert text before the selected block
     A - insert text after the selected block
     s - replace text
+        - ^r" - Paste yanked text
 gv       - re-select last selected visual area
 vi<punct>- select all text in <punct> like vi{ to select all inside of braces
 vi(p     - selct all (this) and replace with the pasted text
