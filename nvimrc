@@ -3,6 +3,8 @@
 
 call pathogen#infect() " Runs the package manager (from bundle folder)
 
+"let base16colorspace=256
+
 set relativenumber
 set number
 " set spell
@@ -53,6 +55,7 @@ filetype plugin on
 set omnifunc=syntaxcomplete#Complete " Set autocompletion based on languge (^x ^o)
 
 colorscheme molokai
+"colorscheme base16-default
 
 " let g:molokai_original = 1 " conflicts with custom color scheme
 let g:rehash256 = 1 " Themeing 256 colors
