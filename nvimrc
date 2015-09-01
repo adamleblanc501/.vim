@@ -106,6 +106,9 @@ imap {<CR> {<CR>}<C-c>O
 nmap <S-CR> O<Esc>
 nmap <CR> o<Esc>
 
+" Sudo to write
+cmap w!! :w !sudo tee % >/dev/null<F37>
+
 " Disable arrow keys in normal and visual mode
 nnoremap <Up> <NOP>
 nnoremap <Down> <NOP>
