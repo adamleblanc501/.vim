@@ -212,10 +212,7 @@ S<x>    - insert <x> around a highlighted section
 https://raw.githubusercontent.com/godlygeek/tabular/master/doc/Tabular.txt
 
 ### OTHER:
-:!wc %         - count number words
 :!fmt %        - simple text formatting
-:%s/foo/bar/g  - Find each occurrence of 'foo' (in all lines), and replace it with 'bar'.
-    ex: :norm @p to apply to multiple lines
 .              - repeat last command
 :%y+           - copy all lines in file
 :source $VIMRC - reload with vimrc
@@ -241,11 +238,11 @@ The Vim language can be used in vim, ex:
 
 ## Vim command line
 vim +<command><parameter> file  - execute a vim command after opening the file
-    - Ex: vim +/install README.txt will execult /install when opening the fiel.
+    - Ex: vim +/install README.txt will execult /install when opening the file.
+
 # Overwritten commands
 ^b      - move up 1 page // currently replaced with NERDTree
 ^f      - move down 1 page // currently replaced with "cciw"
-^n      - Find next match for words that start with the keyword // currently replaced with vim-multicursors
 ^p      - Find previous match for words that start with the keyword // currently replaced with the nomal 'p' command (current 'p' command is modified)
 j,k    - replaced with gj,gk (in normal mode) to act like a "normal" text editor
 
