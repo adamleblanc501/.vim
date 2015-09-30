@@ -119,6 +119,10 @@ vnoremap <Down> <NOP>
 vnoremap <Left> <NOP>
 vnoremap <Right> <NOP>
 
+" Ctrl+SHIFT+C/V to work as expected
+vnoremap <C-C> "+y
+noremap <C-V> "+p
+
 " Terminal
 tnoremap <Esc> <C-\><C-n>
 tnoremap <A-h> <C-\><C-n><C-w>h
