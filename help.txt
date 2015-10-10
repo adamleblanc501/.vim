@@ -211,6 +211,18 @@ S<x>    - insert <x> around a highlighted section
 \a<key><cr> -   equaly space a symbol
 https://raw.githubusercontent.com/godlygeek/tabular/master/doc/Tabular.txt
 
+### CtrlP
+C-p - Search for a file to open
+    C-f, C-b - switch between modes
+    C-d      - search file name only instead of path
+    <after searching>:
+    C-z      - mark/unmark multiple files to open
+    C-o      - open in file (with options)
+    C-t      - open in a tab
+    C-v      - open in a vertical split
+    C-x      - open in a horizontal split
+    C-j, C-k - scroll though results
+
 ### OTHER:
 :!fmt %        - simple text formatting
 .              - repeat last command

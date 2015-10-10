@@ -1,5 +1,5 @@
 " If you have colorscheme issues, run with 'TERM=xterm-256color nvim'
-" Run install.sh for full features, or else remove config related to YCM
+" Run install.sh for all features
 
 call pathogen#infect() " Runs the package manager (from bundle folder)
 
@@ -36,7 +36,6 @@ set matchpairs+=<:> " Allows ci< to work between <...>
 set scrolloff=5     " Set max and min cursor position before scrolling
 set nohlsearch      " Dont highlight after searching
 
-set nocompatible    " Disable vi-compatibility, requires a full vim install
 set laststatus=2    " Always show the statusline
 set encoding=utf-8  " Necessary to show Unicode glyphs
 set t_Co=256        " Explicitly tell Vim that the terminal supports 256 colors
@@ -64,16 +63,19 @@ let g:rehash256 = 1 " Themeing 256 colors
 
 " spelling toggle
 nmap \s :setlocal spell!<cr>
+
 " number line toggle (useful for copying code)
 nmap \l :setlocal number!<cr>
 nmap \k :setlocal relativenumber!<cr>
+
 " Used for java compiling from working folder
 nmap <F7> :w<cr> :! ../compile.sh %<cr>
 nmap <F8> :w<cr> :! ../compileOnly.sh %<cr>
-nmap <F6> :TagbarToggle<CR>
+
 " Makes j and k act like normal up and down on multi-lines
 nmap j gj
 nmap k gk
+
 " Remap to auto-indent (annoying when using 'xp' ... might have fixed that by disabling 'x' going to a buffer)
 nnoremap p p=`]
 nnoremap P P=`]
@@ -84,12 +86,7 @@ nmap <A-b> :NERDTreeTabsToggle<CR>
 " Surround.vim plugin shortcut
 nmap <C-f> ysiw
 
-" Jump lines quickly
-nmap <C-j> 5j
-nmap <C-k> 5k
-xmap <C-j> 5j
-xmap <C-k> 5k
-" Better tab switching (ctrl+key instead of g+key)
+" Better tab switching (alt+key instead of g+key)
 nmap <A-o> gt
 nmap <A-i> gT
 
@@ -195,3 +192,8 @@ autocmd BufWritePost,FileWritePost *.scss call ScssToCss()
 " set up custom auto close pairs
 let g:AutoClosePairs = ("() [] ` \" '")
 
+" CtrlP settings
+let g:ctrlp_match_window = 'bottom,order:ttb'
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
