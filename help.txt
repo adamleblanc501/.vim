@@ -168,6 +168,10 @@ q<x>    - record macro into char <x> (and stop recording macro)
 @@      - play last macro
 #@(@)   - replay last macro # times
 
+## Marks:
+m<char> - create a mark at letter char
+`<char> - go to mark letter char
+
 ## ADDONS:
 
 ### EASYMOTION:
