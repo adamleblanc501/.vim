@@ -43,6 +43,8 @@ set t_Co=256        " Explicitly tell Vim that the terminal supports 256 colors
 
 set relativenumber
 
+set clipboard=unnamedplus " Set x clipboard support for older systems (note: xclip is required either way!)
+
 set iskeyword+=-
 
 set backspace=2     " Sometimes backspace will not work properly on some systems, this is used to fix that.
@@ -119,9 +121,11 @@ vnoremap <Down> <NOP>
 vnoremap <Left> <NOP>
 vnoremap <Right> <NOP>
 
-" Ctrl+SHIFT+C/V to work as expected
+" Ctrl+SHIFT+C/V to work as expected (xclip required!)
+" THIS ONLY WORKS IN TERMINALS THAT SUPPORT libtermkey! (konsole, gnome-terminal, xfce4-terminal, etc)
+" For terminals that dont (guake, etc): ctrl+c works instead, but overwrites the original ctrl+c (cancel). ctrl+v works while in insert mode ONLY.
 vnoremap <C-C> "+y
-noremap <C-V> "+p
+imap <C-V> "+p
 
 " Terminal
 tnoremap <Esc> <C-\><C-n>
