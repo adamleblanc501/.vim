@@ -90,8 +90,8 @@ nmap <C-k> 5k
 xmap <C-j> 5j
 xmap <C-k> 5k
 " Better tab switching (ctrl+key instead of g+key)
-nmap <C-l> gt
-nmap <C-h> gT
+nmap <A-o> gt
+nmap <A-i> gT
 
 " Dont put x into buffer
 nmap x "_dl
