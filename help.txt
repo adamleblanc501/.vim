@@ -62,7 +62,7 @@ zb,L    - bring current line to bottom of screen
 ^u      - move up 1/2 page
 ^d      - move down 1/2 page
 ^b      - move up 1 page // currently replaced with NERDTree
-^f      - move down 1 page // currently replaced with "cciw"
+alt+f   - move down 1 page // currently replaced with "cciw"
 
 ### INSERT:
 i   - insert
@@ -174,27 +174,24 @@ m<char> - create a mark at letter char
 
 ## ADDONS:
 
-### EASYMOTION:
-\\  - handler with movement (ex: \\f{char})
+### easymotion:
+\\  - handler with movement (ex: \\f{char}, ALL MOVEMENTS ARE SUPPORTED, such as w, b, e, etc)
 
 ### NERD TREE:
-^n  - Open tree
-t   - open file in new tab
-s   - open file in vertical split
-i   - open file in horizontal split
-R   - refresh tree
-I   - toggle hidden files
+alt+b - Open tree
+t     - open file in new tab
+s     - open file in vertical split
+i     - open file in horizontal split
+R     - refresh tree
+I     - toggle hidden files
 
-### vim-multiple-cursors
-^n  - in normal mode, press to activate for a word
-    - pressing ^n more times will find the same match and highlight.
-    - in visual mode, press to active by lines
-AFTER ^n:
-v   - go back into normal mode
-c, s, i, a, I, A, all work as expected. (I, A will NOT work in visual mode, pressing v should "fix" that)
-hjkl - moving in the mode will move the cursors itself
-BUGS:
-If there are "dead cursors" on the screen, press ^n to remove them
+## NERD Commneter
+\ci - toggle comment
+\cc - add comment
+\cm - add comment (block?)
+\cs - comment lines "sexily"
+\cy - cc + yank first
+\cA - go to EOL, add comment, go to insert
 
 ### Emmet
 ^y, - activate Emmet as expected.
@@ -257,9 +254,6 @@ vim +<command><parameter> file  - execute a vim command after opening the file
     - Ex: vim +/install README.txt will execult /install when opening the file.
 
 # Overwritten commands
-^b      - move up 1 page // currently replaced with NERDTree
-^f      - move down 1 page // currently replaced with "cciw"
-^p      - Find previous match for words that start with the keyword // currently replaced with the nomal 'p' command (current 'p' command is modified)
 j,k    - replaced with gj,gk (in normal mode) to act like a "normal" text editor
 
 ### MORE HELP:

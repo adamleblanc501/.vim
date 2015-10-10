@@ -84,7 +84,7 @@ nnoremap P P=`]
 nmap <A-b> :NERDTreeTabsToggle<CR>
 
 " Surround.vim plugin shortcut
-nmap <C-f> ysiw
+nmap <A-f> ysiw
 
 " Better tab switching (alt+key instead of g+key)
 nmap <A-o> gt
