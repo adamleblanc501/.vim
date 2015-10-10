@@ -77,7 +77,7 @@ nnoremap p p=`]
 nnoremap P P=`]
 
 " Nerdtree as a 'panel' (all tabs)
-nmap <C-b> :NERDTreeTabsToggle<CR>
+nmap <A-b> :NERDTreeTabsToggle<CR>
 
 " Surround.vim plugin shortcut
 nmap <C-f> ysiw
@@ -107,7 +107,7 @@ nmap <S-CR> O<Esc>
 nmap <CR> o<Esc>
 
 " Sudo to write
-cmap w!! :w !sudo tee % >/dev/null<F37>
+cmap w!! :w !sudo tee % >/dev/null
 
 " Disable arrow keys in normal and visual mode
 nnoremap <Up> <NOP>
