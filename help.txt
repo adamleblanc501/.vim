@@ -41,6 +41,8 @@ A       - go in back of line (insert mode)
 %       - jump matching bracket
 {       - go to beggining of paragraph
 }       - go to end of paragraph
+*       - jump to the next word under cursor
+#       - jump to the previous word under cursor
 g<CMD>  - goto command (and more)
     d - search word under cursor (first occurance)
     * - ^^ (next occurance) (or just *, not g*)
