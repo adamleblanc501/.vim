@@ -164,6 +164,7 @@ let @v = "ggVG="
 " addon for auto compiling on save.
 let g:syntastic_java_javac_classpath = "../*"
 let g:syntastic_cpp_compiler_options = "-std=c++11"
+let g:syntastic_javascript_checkers = ['jshint']
 
 " Need to install the fonts in the fonts folder (run install.sh)
 " I'm not sure what to do after that.
