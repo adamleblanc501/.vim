@@ -50,6 +50,8 @@ set backspace=2     " Sometimes backspace will not work properly on some systems
 
 set lazyredraw      " Don't draw the screen during macros
 
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.exe,*.swp,.git
+
 filetype indent on
 filetype plugin on
 
@@ -197,4 +199,8 @@ let g:AutoClosePairs = ("() [] ` \" '")
 let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 0
-let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+let g:ctrlp_user_command = 'ag %s -l --ignore .exe --ignore .so --ignore .dll --ignore .hg --ignore .git --ignore .svn --nocolor --hidden -g ""'
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+    \ 'file': '\v\.(exe|so|dll)$',
+    \ }
