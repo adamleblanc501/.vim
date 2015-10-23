@@ -83,14 +83,23 @@ nnoremap p p=`]
 nnoremap P P=`]
 
 " Nerdtree as a 'panel' (all tabs)
-nmap <A-b> :NERDTreeTabsToggle<CR>
+if has('nvim')
+    nmap <A-b> :NERDTreeTabsToggle<CR>
+else
+    nmap <C-b> :NERDTreeTabsToggle<CR>
+endif
 
 " Surround.vim plugin shortcut
 nmap <A-f> ysiw
 
 " Better tab switching (alt+key instead of g+key)
-nmap <A-o> gt
-nmap <A-i> gT
+if has('nvim')
+    nmap <A-o> gt
+    nmap <A-i> gT
+else
+    nmap \o gt
+    nmap \i gT
+endif
 
 " Dont put x into buffer
 nmap x "_dl
@@ -126,16 +135,18 @@ vnoremap <Right> <NOP>
 vnoremap <C-C> "+y
 imap <C-V> "+p
 
-" Terminal
-tnoremap <Esc> <C-\><C-n>
-tnoremap <A-h> <C-\><C-n><C-w>h
-tnoremap <A-j> <C-\><C-n><C-w>j
-tnoremap <A-k> <C-\><C-n><C-w>k
-tnoremap <A-l> <C-\><C-n><C-w>l
-nnoremap <A-h> <C-w>h
-nnoremap <A-j> <C-w>j
-nnoremap <A-k> <C-w>k
-nnoremap <A-l> <C-w>l
+if has('nvim')
+    " Terminal
+    tnoremap <Esc> <C-\><C-n>
+    tnoremap <A-h> <C-\><C-n><C-w>h
+    tnoremap <A-j> <C-\><C-n><C-w>j
+    tnoremap <A-k> <C-\><C-n><C-w>k
+    tnoremap <A-l> <C-\><C-n><C-w>l
+    nnoremap <A-h> <C-w>h
+    nnoremap <A-j> <C-w>j
+    nnoremap <A-k> <C-w>k
+    nnoremap <A-l> <C-w>l
+endif
 
 " Remove all whitespace at the EOL
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
