@@ -105,6 +105,12 @@ cit     - change between tags
 <i{     - decrease inner block indent
 
 ### Tricks:
+<CMD>t<CHAR>  - Do something TO a target (like "dt>")
+    T   - backwards
+<CMD>f<CHAR>  - Do something TO (with) a target (like "df>")
+    F   - backwards
+<CMD>i<CHAR>  - Do something inside a target (like "di>")
+<CMD>a<CHAR>  - Do something around a target (like "da>")
 yyp     - duplicate line
 ggVG    - select all
 <CMD>ap - do something to a paragraph block (etc, =ap will auto indent paragraph block)
