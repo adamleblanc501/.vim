@@ -13,6 +13,7 @@ syntax enable
 
 set autoindent
 set smartindent
+au! FileType python setl nosmartindent " disable smartindent for python
 set smartcase
 set smarttab
 set ignorecase
