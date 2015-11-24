@@ -7,26 +7,30 @@ call pathogen#infect() " Runs the package manager (from bundle folder)
 
 set relativenumber
 set number
-" set spell
 set cursorline
 syntax enable
 "set background=dark " conflicts with color scheme
+
 set autoindent
 set smartindent
 set smartcase
 set smarttab
 set ignorecase
+
 " 4 space tabs
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set softtabstop=4
+
 " Round indent
 set shiftround
 
 " Underscores is a word
 set iskeyword-=_
 set incsearch
+
+set colorcolumn=80
 
 " enable wordwrap and linebreak (instead of splitting the words)
 "set wrap
