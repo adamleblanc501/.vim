@@ -112,7 +112,7 @@ if &t_Co > 255
 
    "hi Normal       ctermfg=252 ctermbg=234
    hi Normal       ctermfg=252 ctermbg=none
-   
+
    hi Boolean         ctermfg=141
    hi Character       ctermfg=222
    hi Number          ctermfg=141
@@ -144,6 +144,8 @@ if &t_Co > 255
    hi LineNr          ctermfg=239 ctermbg=235
    hi NonText         ctermfg=239
    hi SpecialKey      ctermfg=239
+
+   hi ColorColumn     ctermbg=81
 end
 
 " Must be at the end, because of ctermbg=234 bug.

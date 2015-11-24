@@ -31,7 +31,8 @@ set shiftround
 set iskeyword-=_
 set incsearch
 
-set colorcolumn=80
+"set colorcolumn=80
+call matchadd('ColorColumn', '\%81v', 80)
 
 " enable wordwrap and linebreak (instead of splitting the words)
 "set wrap
@@ -49,7 +50,8 @@ set relativenumber
 
 set clipboard=unnamedplus " Set x clipboard support for older systems (note: xclip is required either way!)
 
-set iskeyword+=-
+" makes foo-bar one keyword instead of two.
+au FileType html|css set iskeyword+=-
 
 set backspace=2     " Sometimes backspace will not work properly on some systems, this is used to fix that.
 
