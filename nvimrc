@@ -32,7 +32,7 @@ set iskeyword-=_
 set incsearch
 
 "set colorcolumn=80
-call matchadd('ColorColumn', '\%81v', 80)
+call matchadd('ColorColumn', '\%81v', 100)
 
 " enable wordwrap and linebreak (instead of splitting the words)
 "set wrap
@@ -48,21 +48,30 @@ set t_Co=256        " Explicitly tell Vim that the terminal supports 256 colors
 
 set relativenumber
 
-set clipboard=unnamedplus " Set x clipboard support for older systems (note: xclip is required either way!)
+" Set x clipboard support for older systems
+" (note: xclip is required either way!)
+set clipboard=unnamedplus
 
 " makes foo-bar one keyword instead of two.
 au FileType html|css set iskeyword+=-
 
-set backspace=2     " Sometimes backspace will not work properly on some systems, this is used to fix that.
+" Sometimes backspace will not work properly on some systems,
+" this is used to fix that.
+set backspace=2
 
 set lazyredraw      " Don't draw the screen during macros
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.exe,*.swp,.git
 
+" add characters for tabs
+exec "set listchars=tab:\uBB\uBB,nbsp:~"
+set list
+
 filetype indent on
 filetype plugin on
 
-set omnifunc=syntaxcomplete#Complete " Set autocompletion based on languge (^x ^o)
+" Set autocompletion based on languge (^x ^o)
+set omnifunc=syntaxcomplete#Complete
 
 colorscheme molokai
 "colorscheme base16-default
@@ -85,7 +94,8 @@ nmap <F8> :w<cr> :! ../compileOnly.sh %<cr>
 nmap j gj
 nmap k gk
 
-" Remap to auto-indent (annoying when using 'xp' ... might have fixed that by disabling 'x' going to a buffer)
+" Remap to auto-indent (annoying when using 'xp' ... might have fixed that by
+" disabling 'x' going to a buffer)
 nnoremap p p=`]
 nnoremap P P=`]
 
@@ -104,8 +114,8 @@ if has('nvim')
     nmap <A-o> gt
     nmap <A-i> gT
 else
-    nmap \o gt
-    nmap \i gT
+    nmap <leader>o gt
+    nmap <leader>i gT
 endif
 
 " Dont put x into buffer
@@ -137,8 +147,10 @@ vnoremap <Left> <NOP>
 vnoremap <Right> <NOP>
 
 " Ctrl+SHIFT+C/V to work as expected (xclip required!)
-" THIS ONLY WORKS IN TERMINALS THAT SUPPORT libtermkey! (konsole, gnome-terminal, xfce4-terminal, etc)
-" For terminals that dont (guake, etc): ctrl+c works instead, but overwrites the original ctrl+c (cancel). ctrl+v works while in insert mode ONLY.
+" THIS ONLY WORKS IN TERMINALS THAT SUPPORT libtermkey!
+" (konsole, gnome-terminal, xfce4-terminal, etc)
+" For terminals that dont (guake, etc): ctrl+c works instead, but overwrites
+" the original ctrl+c (cancel). ctrl+v works while in insert mode ONLY.
 vnoremap <C-C> "+y
 imap <C-V> "+p
 
@@ -222,3 +234,18 @@ let g:ctrlp_custom_ignore = {
     \ 'dir':  '\v[\/]\.(git|hg|svn)$',
     \ 'file': '\v\.(exe|so|dll)$',
     \ }
+
+" converts bulleted lists to a sentence, and a comma separated sentence to a
+" bulleted list
+nmap <leader>b :call ListTrans_toggle_format()<CR>
+vmap <leader>b :call ListTrans_toggle_format('visual')<CR>
+
+" visual dragging
+vmap <expr> <LEFT>  DVB_Drag('left')
+vmap <expr> <RIGHT> DVB_Drag('right')
+vmap <expr> <DOWN>  DVB_Drag('down')
+vmap <expr> <UP>    DVB_Drag('up')
+vmap <expr> D       DVB_Duplicate()
+
+" Remove any introduced trailing whitespace after moving...
+let g:DVB_TrimWS = 1
