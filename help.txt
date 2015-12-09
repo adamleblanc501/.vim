@@ -233,9 +233,12 @@ C-p - Search for a file to open
     C-j, C-k - scroll though results
 
 ### OTHER:
-:!fmt %        - simple text formatting
+:% <x>         - runs <x> to the whole file
+    :%j        - joins all lines in a file
+    :%y+       - copy all lines in a file
+:! <x>         - run a program
+    :!fmt %    - simple text formatting
 .              - repeat last command
-:%y+           - copy all lines in file
 :source $VIMRC - reload with vimrc
 :g/pattern/cmd - Use a command (ex: :d) after a pattern (ex: :g/pattern/:d)
 :w !sudo tee % - apply sudo to a file if you forgot to do so previously
@@ -243,7 +246,7 @@ C-p - Search for a file to open
 :later         - goes back to current document time
 :.! <command>  - dump output into current window
 :%!xxd         - make vim into a hex editor
-:%!xxd -r      - revert hex editor
+    :%!xxd -r  - revert hex editor
 q:             - look at command history
 :%TOhtml       - create html rendering of file
 ^Z,:sh         - go to a shell
