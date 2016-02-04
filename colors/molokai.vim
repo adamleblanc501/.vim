@@ -145,7 +145,7 @@ if &t_Co > 255
    hi NonText         ctermfg=239
    hi SpecialKey      ctermfg=239
 
-   hi ColorColumn     ctermbg=81
+   hi ColorColumn     ctermfg=239 ctermbg=81
 end
 
 " Must be at the end, because of ctermbg=234 bug.
