@@ -126,9 +126,6 @@ nmap q: :q
 " Disable Q because I dont use it
 nnoremap Q <NOP>
 
-" <C-c> instead of <Esc> because of timeout issues
-imap {<CR> {<CR>}<C-c>O
-
 " Add a new line (without having to go into insert mode)
 nmap <S-CR> O<Esc>
 nmap <CR> o<Esc>
@@ -249,3 +246,9 @@ vmap <expr> D       DVB_Duplicate()
 
 " Remove any introduced trailing whitespace after moving...
 let g:DVB_TrimWS = 1
+
+" YCM
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+
+let g:delimitMate_expand_cr = 1
+let g:delimitMate_expand_space = 1
