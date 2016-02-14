@@ -40,3 +40,9 @@
 [submodule "bundle/delimitMate"]
 	path = bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate
+[submodule "bundle/vim-fat-finger"]
+	path = bundle/vim-fat-finger
+	url = https://github.com/chip/vim-fat-finger
+[submodule "bundle/vim-schlepp"]
+	path = bundle/vim-schlepp
+	url = https://github.com/zirrostig/vim-schlepp

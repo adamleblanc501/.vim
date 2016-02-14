@@ -118,6 +118,12 @@ else
     nmap <leader>i gT
 endif
 
+" add quick find and replace
+nmap <leader>S :%s//g<LEFT><LEFT>
+" search with /find then \Rreplace<cr> to replace all matched items in the
+" search
+nmap <expr> R ':%s/' . @/ . '//g<LEFT><LEFT>'
+
 " Dont put x into buffer
 nmap x "_dl
 
@@ -237,15 +243,14 @@ let g:ctrlp_custom_ignore = {
 nmap <leader>b :call ListTrans_toggle_format()<CR>
 vmap <leader>b :call ListTrans_toggle_format('visual')<CR>
 
-" visual dragging
-vmap <expr> <LEFT>  DVB_Drag('left')
-vmap <expr> <RIGHT> DVB_Drag('right')
-vmap <expr> <DOWN>  DVB_Drag('down')
-vmap <expr> <UP>    DVB_Drag('up')
-vmap <expr> D       DVB_Duplicate()
-
-" Remove any introduced trailing whitespace after moving...
-let g:DVB_TrimWS = 1
+" visual drag <schlepp>
+vmap <up>    <Plug>SchleppUp
+vmap <down>  <Plug>SchleppDown
+vmap <left>  <Plug>SchleppLeft
+vmap <right> <Plug>SchleppRight
+vmap D <Plug>SchleppDup
+" remove tailing white space after moving
+let g:Schlepp#trimWS = 0
 
 " YCM
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
