@@ -26,7 +26,6 @@ command -v ruby >/dev/null 2>&1 || {
     exit 1;
 }
 
-cd ~/.nvim/
 echo Installing plugins...
 git submodule update --init --recursive
 echo Done intsalling plugins...
