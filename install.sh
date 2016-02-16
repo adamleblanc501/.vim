@@ -26,6 +26,9 @@ command -v ruby >/dev/null 2>&1 || {
     exit 1;
 }
 
+echo Creating nvim symlink
+ln -s ~/.vim ~/.config/nvim
+
 echo Installing plugins...
 git submodule update --init --recursive
 echo Done intsalling plugins...
