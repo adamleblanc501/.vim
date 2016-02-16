@@ -136,6 +136,9 @@ nnoremap Q <NOP>
 nmap <S-CR> O<Esc>
 nmap <CR> o<Esc>
 
+" indent block of code
+nmap \i vi{>
+
 " Sudo to write
 cmap w!! :w !sudo tee % >/dev/null
 
