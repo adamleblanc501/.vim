@@ -80,11 +80,13 @@ colorscheme molokai
 let g:rehash256 = 1 " Themeing 256 colors
 
 " spelling toggle
-nmap \s :setlocal spell!<cr>
+nmap <leader>s :setlocal spell!<cr>
+" paste toggle
+nmap <leader>p :set paste!<cr>
 
 " number line toggle (useful for copying code)
-nmap \l :setlocal number!<cr>
-nmap \k :setlocal relativenumber!<cr>
+nmap <leader>l :setlocal number!<cr>
+nmap <leader>k :setlocal relativenumber!<cr>
 
 " Used for java compiling from working folder
 nmap <F7> :w<cr> :! ../compile.sh %<cr>
@@ -138,6 +140,12 @@ nmap <CR> o<Esc>
 
 " indent block of code
 nmap \i vi{>
+
+" set tabs depending on file
+nmap \t :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
+nmap \T :set expandtab tabstop=8 shiftwidth=8 softtabstop=4<CR>
+nmap \M :set noexpandtab tabstop=8 softtabstop=4 shiftwidth=4<CR>
+nmap \m :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>
 
 " Sudo to write
 cmap w!! :w !sudo tee % >/dev/null
