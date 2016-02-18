@@ -207,6 +207,9 @@ let @c = "o/** NAME\<Esc>o*\<Esc>o* DESCRIPTION\<Esc>o*/\<Esc>kkkllR"
 " Auto tab page
 let @v = "ggVG="
 
+" nerd tree
+let NERDTreeIgnore = ['\.pyc$']
+
 " addon for auto compiling on save.
 let g:syntastic_java_javac_classpath = "../*"
 let g:syntastic_cpp_compiler_options = "-std=c++11"
