@@ -265,6 +265,7 @@ let g:Schlepp#trimWS = 0
 
 " YCM
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+let g:ycm_autoclose_preview_window_after_completion = 1
 
 let g:delimitMate_expand_cr = 1
 let g:delimitMate_expand_space = 1
