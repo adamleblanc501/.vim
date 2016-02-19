@@ -1,14 +1,16 @@
 #!/bin/bash
 
 # ask questions
-read -p "Install things with sudo? [yn] " yn
+read -n 1 -p "Install things with sudo? [yn] " yn
+echo # read -n 1 doesn't make a new line
     case $yn in
         [Yy]* ) SUDO=true;;
         [Nn]* ) SUDO=false;;
             * ) echo "Please answer Yes or No";;
 esac
 
-read -p "Install YouCompleteMe? [yn] " yn
+read -n 1 -p "Install YouCompleteMe? [yn] " yn
+echo # read -n 1 doesn't make a new line
 case $yn in
     [Yy]* ) YCM=true;;
     [Nn]* ) YCM=false;;
@@ -16,7 +18,8 @@ case $yn in
 esac
 
 if $YCM; then
-    read -p "Will you be using Neovim? [yn] " yn
+    read -n 1 -p "Will you be using Neovim? [yn] " yn
+    echo # read -n 1 doesn't make a new line
 
     case $yn in
         [Yy]* )
