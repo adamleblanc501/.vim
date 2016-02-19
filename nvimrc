@@ -122,9 +122,9 @@ endif
 
 " add quick find and replace
 nmap <leader>S :%s//g<LEFT><LEFT>
-" search with /find then \Rreplace<cr> to replace all matched items in the
+" search with /find then \Yreplace<cr> to replace all matched items in the
 " search
-nmap <expr> R ':%s/' . @/ . '//g<LEFT><LEFT>'
+nmap <expr> Y ':%s/' . @/ . '//g<LEFT><LEFT>'
 
 " Dont put x into buffer
 nmap x "_dl
