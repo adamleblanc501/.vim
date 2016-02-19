@@ -256,6 +256,9 @@ The Vim language can be used in vim, ex:
 "+<copy command> - register to put clipboard into the X-System.
 HTML:
 vatS<tag>      - wraps the tag with a parent tag
+:g/PATTERN/MODE COMMAND - emulate grep -v
+    :g/foo/normal dd    - delete all lines containing "foo"
+    :g/foo/normal "Ay   - add "foo" to the A register
 
 ## Saving
 :w          - save
