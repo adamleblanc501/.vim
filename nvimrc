@@ -266,9 +266,13 @@ vmap D <Plug>SchleppDup
 " remove tailing white space after moving
 let g:Schlepp#trimWS = 0
 
-" YCM
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
-let g:ycm_autoclose_preview_window_after_completion = 1
+" YCM (makes YCM optional)
+if filereadable($HOME."/.vim/bundle/YouCompleteMe/third_party/ycmd/ycm_core.so")
+    let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+    let g:ycm_autoclose_preview_window_after_completion = 1
+else
+    let g:loaded_youcompleteme = 1
+endif
 
 let g:delimitMate_expand_cr = 1
 let g:delimitMate_expand_space = 1
