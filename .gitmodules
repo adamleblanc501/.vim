@@ -46,3 +46,6 @@
 [submodule "bundle/vim-schlepp"]
 	path = bundle/vim-schlepp
 	url = https://github.com/zirrostig/vim-schlepp
+[submodule "bundle/vim-css-color"]
+	path = bundle/vim-css-color
+	url = https://github.com/ap/vim-css-color
