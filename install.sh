@@ -1,19 +1,40 @@
 #!/bin/bash
 
+# ask questions
 read -p "Install things with sudo? [yn] " yn
     case $yn in
         [Yy]* ) SUDO=true;;
         [Nn]* ) SUDO=false;;
-            * ) echo "Please anser Yes or No";;
+            * ) echo "Please answer Yes or No";;
 esac
 
 read -p "Install YouCompleteMe? [yn] " yn
 case $yn in
     [Yy]* ) YCM=true;;
     [Nn]* ) YCM=false;;
-        * ) echo "Please anser Yes or No";;
+        * ) echo "Please answer Yes or No";;
 esac
 
+if $YCM; then
+    read -p "Will you be using Neovim? [yn] " yn
+
+    case $yn in
+        [Yy]* )
+            if [[ "$SUDO" == "false" ]]; then
+               echo "Sudo was not selected, but must be used for installing YCM with Neovim."
+               echo "Either allow sudo, or do not install YCM."
+               exit
+            fi
+            NEO=true
+            ;;
+        [Nn]* ) NEO=false;;
+            * ) echo "Please answer Yes or No";;
+    esac
+else
+    NEO=false
+fi
+
+# check dependencies
 echo "Make sure cmake, build-essential, python2-dev, pip2, npm, and ruby are installed."
 
 if $YCM; then
@@ -22,7 +43,10 @@ if $YCM; then
         echo "install: cmake"
         exit 1;
     }
+fi
 
+# neo is currently only set if YCM is selected.
+if $NEO; then
     command -v pip2 >/dev/null 2>&1 || {
         echo "I require pip2 but it's not installed. Aborting."
         echo "install: arch: python2-pip, debian: python-pip"
@@ -60,15 +84,20 @@ if $SUDO; then
     sudo su -c "gem install sass"
     sudo npm install -g jshint
     echo Done installing other dependencies
+fi
 
-    if $YCM; then
-        echo Installing YouCompleteMe
-        # YouCompleteMe
-        cd bundle/YouCompleteMe
-        python2 ./install.py --clang-completer
+if $YCM; then
+    echo Installing YouCompleteMe
+    # YouCompleteMe
+    cd bundle/YouCompleteMe
+    python2 ./install.py --clang-completer
+
+    # only required for YCM plugin so far.
+    if $NEO; then
         sudo pip2 install neovim
-        echo Done installing YouCompleteMe
     fi
+
+    echo Done installing YouCompleteMe
 fi
 
 echo Note: Some configuration requires external applications:
