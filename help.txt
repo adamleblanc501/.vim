@@ -208,9 +208,11 @@ I     - toggle hidden files
 ^_  - (note: not ^- (its CTRL+SHIFT+-)) Checks for an xml/html tag, and will generate a closing tag
 
 ### vim-surround
-ysiw<x>,^f  - insert <x> around a word
-yss<x>      - insert <x> around a line
-cs<x><y>    - replace <x> inside a <x>...<x> with <y>...<y>
+ys<movement><x> - use a movement to add a <x>
+    ysiw<x>,^f  - insert <x> around a word
+    yss<x>      - insert <x> around a line
+    yst<"       - insert " from cursor to <
+    cs<x><y>    - replace <x> inside a <x>...<x> with <y>...<y>
     cst<x>  - replace an xml/html tag with <x>
 ds<x>       - remove <x> contained within <x>
 Visual:
