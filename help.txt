@@ -261,6 +261,7 @@ vatS<tag>      - wraps the tag with a parent tag
 :g/PATTERN/MODE COMMAND - emulate grep -v
     :g/foo/normal dd    - delete all lines containing "foo"
     :g/foo/normal "Ay   - add "foo" to the A register
+C+a            - Increment number
 
 ## Saving
 :w          - save
