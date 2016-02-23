@@ -12,7 +12,7 @@ syntax enable
 "set background=dark " conflicts with color scheme
 
 set autoindent
-set smartindent
+"set smartindent
 au! FileType python setl nosmartindent " disable smartindent for python
 set smartcase
 set smarttab
@@ -270,6 +270,7 @@ let g:Schlepp#trimWS = 0
 if filereadable($HOME."/.vim/bundle/YouCompleteMe/third_party/ycmd/ycm_core.so")
     let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
     let g:ycm_autoclose_preview_window_after_completion = 1
+    let g:ycm_confirm_extra_conf = 0
 else
     let g:loaded_youcompleteme = 1
 endif
