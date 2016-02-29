@@ -67,16 +67,16 @@ zb,L    - bring current line to bottom of screen
 alt+f   - move down 1 page // currently replaced with "cciw"
 
 ### INSERT:
-i   - insert
-I   - insert to begging of line
-a   - append
-A   - append to EOL
-o   - create new line under current line
-O   - create new line above current line
-s   - delete char under cursor and insert
-S   - delete line under cursor and insert
-^o  - apply one normal command, then go back into insert
-^i  - tab
+i    - insert
+I    - insert to begging of line
+a    - append
+A    - append to EOL
+o    - create new line under current line
+O    - create new line above current line
+s    - delete char under cursor and insert
+S,cc - delete line under cursor and insert
+^o   - apply one normal command, then go back into insert
+^i   - tab
 
 ### EDIT:
 y       - copy char
