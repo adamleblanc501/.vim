@@ -231,7 +231,7 @@ let g:airline_right_sep = ''
 let g:airline_right_sep = ''
 
 " Compiles SCSS files on saving.
-function ScssToCss()
+function! ScssToCss()
     let current_file = shellescape(expand('%:p'))
     let filename = shellescape(expand('%:r'))
     let command = "silent !sass " . current_file . " " . filename . ".css"
