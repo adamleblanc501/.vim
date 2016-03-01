@@ -81,13 +81,15 @@ echo Installing fonts...
 fonts-install/install.sh
 echo Done installing fonts...
 
+# Other deppendencies
+echo Installing other dependencies
+gem install sass
+
 if $SUDO; then
-    echo Installing other dependencies
-    # Other deppendencies
-    sudo su -c "gem install sass"
     sudo npm install -g jshint
-    echo Done installing other dependencies
 fi
+
+echo Done installing other dependencies
 
 if $YCM; then
     echo Installing YouCompleteMe
