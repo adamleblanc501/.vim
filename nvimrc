@@ -160,14 +160,6 @@ vnoremap <Down> <NOP>
 vnoremap <Left> <NOP>
 vnoremap <Right> <NOP>
 
-" Ctrl+SHIFT+C/V to work as expected (xclip required!)
-" THIS ONLY WORKS IN TERMINALS THAT SUPPORT libtermkey!
-" (konsole, gnome-terminal, xfce4-terminal, etc)
-" For terminals that dont (guake, etc): ctrl+c works instead, but overwrites
-" the original ctrl+c (cancel). ctrl+v works while in insert mode ONLY.
-vnoremap <C-C> "+y
-imap <C-V> "+p
-
 if has('nvim')
     " Terminal
     tnoremap <Esc> <C-\><C-n>
