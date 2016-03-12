@@ -73,8 +73,11 @@ filetype plugin on
 " Set autocompletion based on languge (^x ^o)
 set omnifunc=syntaxcomplete#Complete
 
-colorscheme molokai
-"colorscheme base16-default
+"colorscheme molokai
+"let g:airline_theme = 'powerlineish'
+colorscheme jellybeans
+let g:airline_theme = 'base16_default'
+let g:jellybeans_use_term_italics = 1
 
 " let g:molokai_original = 1 " conflicts with custom color scheme
 let g:rehash256 = 1 " Themeing 256 colors
@@ -211,7 +214,6 @@ let g:syntastic_javascript_checkers = ['jshint']
 " I'm not sure what to do after that.
 set guifont=Liberation\ Mono\ for\ Powerline\ 10
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'powerlineish'
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
