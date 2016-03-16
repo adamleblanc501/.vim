@@ -106,4 +106,4 @@ if $YCM; then
 fi
 
 echo Note: Some configuration requires external applications:
-echo \'xclip\', \'the_silver_searcher\'
+echo 'xclip, the_silver_searcher, and ctags (or exuberant-ctags)'

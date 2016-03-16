@@ -269,7 +269,11 @@ else
     let g:loaded_youcompleteme = 1
 endif
 
+" delimate settings
 let g:delimitMate_expand_cr = 1
 let g:delimitMate_expand_space = 1
 let g:delimitMate_matchpairs = "(:),[:],{:}"
 au FileType html let b:delimitMate_matchpairs = "<:>,(:),[:],{:}"
+
+" easytags settings
+let g:easytags_async = 1
