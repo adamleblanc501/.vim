@@ -61,3 +61,6 @@
 [submodule "bundle/vim-easytags"]
 	path = bundle/vim-easytags
 	url = https://github.com/xolox/vim-easytags
+[submodule "bundle/tern"]
+	path = bundle/tern
+	url = https://github.com/ternjs/tern_for_vim

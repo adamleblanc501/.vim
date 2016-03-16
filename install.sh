@@ -87,6 +87,12 @@ gem install sass
 
 if $SUDO; then
     sudo npm install -g jshint
+    sudo npm install -g git+https://github.com/ramitos/jsctags.git
+    # assuming that sudo is installed probably means that npm is installed
+    # (hence why I'm not checking if it's installed because of the sudo check)
+    cd bundle/tern
+    npm install
+    cd ../..
 fi
 
 echo Done installing other dependencies
