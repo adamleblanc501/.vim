@@ -188,13 +188,17 @@ nmap <leader>r :so $MYVIMRC<cr> " Reload vimrc
 
 " Tabularize
 nmap <Leader>a- :Tabularize /-<CR>
+nmap <Leader>a+ :Tabularize /+<CR>
+nmap <Leader>a/ :Tabularize /\/<CR>
+nmap <Leader>a* :Tabularize /*<CR>
 nmap <Leader>a& :Tabularize /&<CR>
 nmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
-nmap <Leader>a=> :Tabularize /=><CR>
-nmap <Leader>a: :Tabularize /:<CR>
-nmap <Leader>a:: :Tabularize /:\zs<CR>
-nmap <Leader>a, :Tabularize /,<CR>
-nmap <Leader>a,, :Tabularize /,\zs<CR>
+nmap <Leader>a< :Tabularize /<<CR>
+nmap <Leader>a<= :Tabularize /<=<CR>
+nmap <Leader>a> :Tabularize /><CR>
+nmap <Leader>a>= :Tabularize />=<CR>
+nmap <Leader>a: :Tabularize /:\zs<CR>
+nmap <Leader>a, :Tabularize /,\zs<CR>
 nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
 
 " JavaDoc Comment, needs rework
