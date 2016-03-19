@@ -182,6 +182,11 @@ nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 " Remove all whitespace at the EOL on write
 autocmd BufWritePre * :%s/\s\+$//e
 
+" Mkview when automatic (doesn't work for neovim...?)
+set viewoptions-=options
+"autocmd BufWinLeave ?* mkview
+"autocmd BufWinEnter ?* silent loadview
+
 " Custom commands with <leader>
 nmap <leader>e :sp $MYVIMRC<cr> " Edit vimrc
 nmap <leader>r :so $MYVIMRC<cr> " Reload vimrc
@@ -281,3 +286,8 @@ au FileType html let b:delimitMate_matchpairs = "<:>,(:),[:],{:}"
 
 " easytags settings
 let g:easytags_async = 1
+
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g'\"" | endif
+endif
