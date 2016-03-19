@@ -182,6 +182,9 @@ nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 " Remove all whitespace at the EOL on write
 autocmd BufWritePre * :%s/\s\+$//e
 
+" restore last line number we were on in the file
+au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
 " Mkview when automatic (doesn't work for neovim...?)
 set viewoptions-=options
 "autocmd BufWinLeave ?* mkview
@@ -286,8 +289,3 @@ au FileType html let b:delimitMate_matchpairs = "<:>,(:),[:],{:}"
 
 " easytags settings
 let g:easytags_async = 1
-
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal! g'\"" | endif
-endif
