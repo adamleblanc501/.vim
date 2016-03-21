@@ -264,6 +264,8 @@ HTML: vatS<tag>  - wraps the tag with a parent tag
 C+a            - Increment number
 :r!<x>         - read a command into the file
     :r!ls      - read ls into the file
+]I             - list all lines of words under cursor
+]i             - show first occurrence of word under cursor (useful for definitions)
 
 ## Saving
 :w          - save

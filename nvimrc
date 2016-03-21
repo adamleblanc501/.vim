@@ -99,10 +99,9 @@ nmap <F8> :w<cr> :! ../compileOnly.sh %<cr>
 nmap j gj
 nmap k gk
 
-" Remap to auto-indent (annoying when using 'xp' ... might have fixed that by
-" disabling 'x' going to a buffer)
-nnoremap p p=`]
-nnoremap P P=`]
+" Remap to auto-indent
+nnoremap p mzp=`]`z
+nnoremap P mzP=`]`z
 
 " Nerdtree as a 'panel' (all tabs)
 if has('nvim')
@@ -153,15 +152,14 @@ nmap <leader>m :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>
 " Sudo to write
 cmap w!! :w !sudo tee % >/dev/null
 
-" Disable arrow keys in normal and visual mode
-nnoremap <Up> <NOP>
-nnoremap <Down> <NOP>
-nnoremap <Left> <NOP>
-nnoremap <Right> <NOP>
-vnoremap <Up> <NOP>
-vnoremap <Down> <NOP>
-vnoremap <Left> <NOP>
-vnoremap <Right> <NOP>
+" make arrow keys more useful, resize viewports
+nnoremap <Left> :vertical resize +2<CR>
+nnoremap <Right> :vertical resize -2<CR>
+nnoremap <Up> :resize -2<CR>
+nnoremap <Down> :resize +2<CR>
+
+" keep cursor in place when joining lines
+nnoremap J mzJ`z
 
 if has('nvim')
     " Terminal
