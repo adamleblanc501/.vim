@@ -1,21 +1,31 @@
-" If you have colorscheme issues, run with 'TERM=xterm-256color nvim'
+"` If you have colorscheme issues, run with 'TERM=xterm-256color nvim'
 " Run install.sh for all features
 
 call pathogen#infect() " Runs the package manager (from bundle folder)
 
 "let base16colorspace=256
 
+" sets that are enabled in neovim
+if !has('nvim')
+    set autoindent
+    set autoread
+    set encoding=utf-8
+    set history=10000
+    set incsearch
+    set langnoremap
+    set mouse=a
+    set smarttab
+    set wildmenu
+endif
+
 set relativenumber
 set number
 set cursorline
 syntax enable
-"set background=dark " conflicts with color scheme
+"set background=dark " sometimes conflicts with color scheme
 
-set autoindent
-"set smartindent
 au! FileType python setl nosmartindent " disable smartindent for python
 set smartcase
-set smarttab
 set ignorecase
 
 " 4 space tabs
@@ -29,7 +39,6 @@ set shiftround
 
 " Underscores is a word
 set iskeyword-=_
-set incsearch
 
 "set colorcolumn=80
 call matchadd('ColorColumn', '\%81v', 100)
@@ -43,7 +52,6 @@ set scrolloff=5     " Set max and min cursor position before scrolling
 set nohlsearch      " Dont highlight after searching
 
 set laststatus=2    " Always show the statusline
-set encoding=utf-8  " Necessary to show Unicode glyphs
 set t_Co=256        " Explicitly tell Vim that the terminal supports 256 colors
 
 set relativenumber
@@ -218,6 +226,7 @@ let NERDTreeIgnore = ['\.pyc$']
 " addon for auto compiling on save.
 let g:syntastic_java_javac_classpath = "../*"
 let g:syntastic_cpp_compiler_options = "-std=c++11"
+let g:syntastic_c_compiler_options = "-std=c99"
 let g:syntastic_javascript_checkers = ['jshint']
 
 " Need to install the fonts in the fonts folder (run install.sh)
