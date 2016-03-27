@@ -12,7 +12,6 @@ if !has('nvim')
     set encoding=utf-8
     set history=10000
     set incsearch
-    set langnoremap
     set mouse=a
     set smarttab
     set wildmenu
