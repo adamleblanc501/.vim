@@ -14,6 +14,7 @@ vim <file URL> - edit / open a file (like vim http://google.com)
 ### MOVEMENT:
 hjkl    - left down up right
 H       - move to top of screen
+M       - move to middle of screen
 L       - move to bottom of screen
 G       - goto EOF
 O       - move to the beginning of line
@@ -136,6 +137,7 @@ Insert mode:
     (vim -S ~/session.vim)
 
 ### VISUAL:
+:h text-objects
 v       - visual character (use standard movement to move around)
 ^v      - visual block (exact)
 shift+V - visual line
