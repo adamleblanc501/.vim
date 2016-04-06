@@ -185,7 +185,8 @@ endif
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 " Remove all whitespace at the EOL on write
-autocmd BufWritePre * :%s/\s\+$//e
+let blacklist = ['md', 'markdown']
+autocmd BufWritePre * if index(blacklist, &ft) < 0 | :%s/\s\+$//e
 
 " restore last line number we were on in the file
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
