@@ -89,6 +89,9 @@ let g:jellybeans_use_term_italics = 1
 " let g:molokai_original = 1 " conflicts with custom color scheme
 let g:rehash256 = 1 " Themeing 256 colors
 
+" map <leader> from \ to ' '
+let mapleader = "\<Space>"
+
 " spelling toggle
 nmap <leader>s :setlocal spell!<cr>
 " paste toggle
@@ -109,6 +112,9 @@ nmap k gk
 " Remap to auto-indent
 nnoremap p mzp=`]`z
 nnoremap P mzP=`]`z
+
+" write to file quickly
+nnoremap <Leader>w :w<CR>
 
 " Nerdtree as a 'panel' (all tabs)
 if has('nvim')
