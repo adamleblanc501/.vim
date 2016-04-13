@@ -280,6 +280,7 @@ vim +<command><parameter> file  - execute a vim command after opening the file
 
 # Overwritten commands
 j,k    - replaced with gj,gk (in normal mode) to act like a "normal" text editor
+p      - auto indents after pasting. It might be annoying, so remove if you think it is
 
 ### MORE HELP:
 https://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim
