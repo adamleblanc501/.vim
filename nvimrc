@@ -81,10 +81,16 @@ filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 
 "colorscheme molokai
-"let g:airline_theme = 'powerlineish'
 colorscheme jellybeans
-let g:airline_theme = 'base16_default'
-let g:jellybeans_use_term_italics = 1
+" custom colorscheme config
+if g:colors_name == "molokai"
+    let g:airline_theme = 'powerlineish'
+elseif g:colors_name == "jellybeans"
+    let g:airline_theme = 'base16_default'
+    let g:jellybeans_use_term_italics = 1
+    " Custom specialcharacter color
+    hi SpecialChar ctermfg=135
+endif
 
 " let g:molokai_original = 1 " conflicts with custom color scheme
 let g:rehash256 = 1 " Themeing 256 colors
