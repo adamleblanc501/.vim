@@ -110,8 +110,8 @@ nmap j gj
 nmap k gk
 
 " Remap to auto-indent
-nnoremap p mzp=`]`z
-nnoremap P mzP=`]`z
+nnoremap p pmz=`]`z
+nnoremap P Pmz=`]`z
 
 " write to file quickly
 nnoremap <Leader>w :w<CR>
