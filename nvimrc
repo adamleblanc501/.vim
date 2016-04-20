@@ -130,7 +130,9 @@ else
 endif
 
 " Surround.vim plugin shortcut
-nmap <A-f> ysiw
+if has('nvim')
+    nmap <A-f> ysiw
+endif
 
 " Better tab switching (alt+key instead of g+key)
 if has('nvim')
@@ -150,6 +152,7 @@ nmap <expr> Y ':%s/' . @/ . '//g<LEFT><LEFT>'
 " Dont put x into buffer
 nmap x "_dl
 
+" remove history and replace with :q because I always mess it up
 nmap q: :q
 
 " Disable Q because I dont use it
@@ -209,8 +212,10 @@ set viewoptions-=options
 "autocmd BufWinEnter ?* silent loadview
 
 " Custom commands with <leader>
-nmap <leader>e :sp $MYVIMRC<cr> " Edit vimrc
-nmap <leader>r :so $MYVIMRC<cr> " Reload vimrc
+" Edit vimrc
+nmap <leader>e :sp $MYVIMRC<cr>
+" Reload vimrc
+nmap <leader>r :so $MYVIMRC<cr>
 
 " Tabularize
 nmap <Leader>a- :Tabularize /-<CR>
