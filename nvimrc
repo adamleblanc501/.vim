@@ -1,4 +1,4 @@
-"` If you have colorscheme issues, run with 'TERM=xterm-256color nvim'
+" If you have colorscheme issues, run with 'TERM=xterm-256color nvim'
 " Run install.sh for all features
 
 call pathogen#infect() " Runs the package manager (from bundle folder)
@@ -57,7 +57,9 @@ set relativenumber
 
 " Set x clipboard support for older systems
 " (note: xclip is required either way!)
-set clipboard=unnamedplus
+if executable('xclip') && has('clipboard')
+    set clipboard=unnamedplus
+endif
 
 " makes foo-bar one keyword instead of two.
 au FileType html|css set iskeyword+=-
