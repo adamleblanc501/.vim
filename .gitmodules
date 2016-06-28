@@ -1,69 +1,19 @@
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
 	url = https://github.com/tpope/vim-surround
-[submodule "bundle/vim-repeat"]
-	path = bundle/vim-repeat
-	url = https://github.com/tpope/vim-repeat
-[submodule "bundle/html5"]
-	path = bundle/html5
-	url = https://github.com/othree/html5.vim
-[submodule "bundle/tabular"]
-	path = bundle/tabular
-	url = https://github.com/godlygeek/tabular
 [submodule "bundle/vim-gitgutter"]
 	path = bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = https://github.com/scrooloose/syntastic
-[submodule "bundle/base16"]
-	path = bundle/base16
-	url = https://github.com/chriskempson/base16-vim
-[submodule "bundle/vim-less"]
-	path = bundle/vim-less
-	url = https://github.com/groenewege/vim-less
-[submodule "bundle/vim-jade"]
-	path = bundle/vim-jade
-	url = https://github.com/digitaltoad/vim-jade
-[submodule "bundle/ctrlp.vim"]
-	path = bundle/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim
-[submodule "bundle/nerdcommenter"]
-	path = bundle/nerdcommenter
-	url = https://github.com/scrooloose/nerdcommenter
-[submodule "bundle/vim-easymotion"]
-	path = bundle/vim-easymotion
-	url = https://github.com/easymotion/vim-easymotion
-[submodule "bundle/YouCompleteMe"]
-	path = bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe
 [submodule "bundle/delimitMate"]
 	path = bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate
-[submodule "bundle/vim-fat-finger"]
-	path = bundle/vim-fat-finger
-	url = https://github.com/chip/vim-fat-finger
-[submodule "bundle/vim-schlepp"]
-	path = bundle/vim-schlepp
-	url = https://github.com/zirrostig/vim-schlepp
-[submodule "bundle/vim-css-color"]
-	path = bundle/vim-css-color
-	url = https://github.com/ap/vim-css-color
 [submodule "bundle/cs-jellybeans"]
 	path = bundle/cs-jellybeans
 	url = https://github.com/nanotech/jellybeans.vim
-[submodule "bundle/vim-airline-themes"]
-	path = bundle/vim-airline-themes
-	url = https://github.com/vim-airline/vim-airline-themes.git
 [submodule "bundle/vim-misc"]
 	path = bundle/vim-misc
 	url = https://github.com/xolox/vim-misc
 [submodule "bundle/vim-easytags"]
-	path = bundle/vim-easytags
-	url = https://github.com/xolox/vim-easytags
-[submodule "bundle/tern"]
-	path = bundle/tern
-	url = https://github.com/ternjs/tern_for_vim
-[submodule "bundle/vim-sleuth"]
-	path = bundle/vim-sleuth
-	url = https://github.com/tpope/vim-sleuth

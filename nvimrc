@@ -17,7 +17,6 @@ if !has('nvim')
     set wildmenu
 endif
 
-set relativenumber
 set number
 set cursorline
 syntax enable
@@ -53,7 +52,6 @@ set nohlsearch      " Dont highlight after searching
 set laststatus=2    " Always show the statusline
 set t_Co=256        " Explicitly tell Vim that the terminal supports 256 colors
 
-set relativenumber
 
 " Set x clipboard support for older systems
 " (note: xclip is required either way!)
@@ -83,7 +81,7 @@ filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 
 "colorscheme molokai
-colorscheme jellybeans
+colorscheme molokai
 " custom colorscheme config
 if g:colors_name == "molokai"
     let g:airline_theme = 'powerlineish'
@@ -219,93 +217,12 @@ nmap <leader>e :sp $MYVIMRC<cr>
 " Reload vimrc
 nmap <leader>r :so $MYVIMRC<cr>
 
-" Tabularize
-nmap <Leader>a- :Tabularize /-<CR>
-nmap <Leader>a+ :Tabularize /+<CR>
-nmap <Leader>a/ :Tabularize /\/<CR>
-nmap <Leader>a* :Tabularize /*<CR>
-nmap <Leader>a& :Tabularize /&<CR>
-nmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
-nmap <Leader>a< :Tabularize /<<CR>
-nmap <Leader>a<= :Tabularize /<=<CR>
-nmap <Leader>a> :Tabularize /><CR>
-nmap <Leader>a>= :Tabularize />=<CR>
-nmap <Leader>a: :Tabularize /:\zs<CR>
-nmap <Leader>a, :Tabularize /,\zs<CR>
-nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-
-" JavaDoc Comment, needs rework
-let @c = "o/** NAME\<Esc>o*\<Esc>o* DESCRIPTION\<Esc>o*/\<Esc>kkkllR"
-" Auto tab page
-let @v = "ggVG="
-
-" nerd tree
-let NERDTreeIgnore = ['\.pyc$']
 
 " addon for auto compiling on save.
 let g:syntastic_java_javac_classpath = "../*"
 let g:syntastic_cpp_compiler_options = "-std=c++11"
 let g:syntastic_c_compiler_options = "-std=c99"
 let g:syntastic_javascript_checkers = ['jshint']
-
-" Need to install the fonts in the fonts folder (run install.sh)
-" I'm not sure what to do after that.
-set guifont=Liberation\ Mono\ for\ Powerline\ 10
-let g:airline_powerline_fonts = 1
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-
-" disbale unicode symbols on airline
-let g:airline_left_sep  = ''
-let g:airline_left_sep  = ''
-let g:airline_right_sep = ''
-let g:airline_right_sep = ''
-
-" Compiles SCSS files on saving.
-function! ScssToCss()
-    let current_file = shellescape(expand('%:p'))
-    let filename = shellescape(expand('%:r'))
-    let command = "silent !sass " . current_file . " " . filename . ".css"
-    execute command
-endfunction
-autocmd BufWritePost,FileWritePost *.scss call ScssToCss()
-
-" set up custom auto close pairs
-let g:AutoClosePairs = ("() [] ` \" '")
-
-" CtrlP settings
-let g:ctrlp_match_window = 'bottom,order:ttb'
-let g:ctrlp_switch_buffer = 0
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_user_command = 'ag %s -l --ignore .exe --ignore .so --ignore .dll --ignore .hg --ignore .git --ignore .svn --nocolor --hidden -g ""'
-let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-    \ 'file': '\v\.(exe|so|dll)$',
-    \ }
-
-" converts bulleted lists to a sentence, and a comma separated sentence to a
-" bulleted list
-nmap <leader>b :call ListTrans_toggle_format()<CR>
-vmap <leader>b :call ListTrans_toggle_format('visual')<CR>
-
-" visual drag <schlepp>
-vmap <up>    <Plug>SchleppUp
-vmap <down>  <Plug>SchleppDown
-vmap <left>  <Plug>SchleppLeft
-vmap <right> <Plug>SchleppRight
-vmap D <Plug>SchleppDup
-" remove tailing white space after moving
-let g:Schlepp#trimWS = 0
-
-" YCM (makes YCM optional)
-if filereadable($HOME."/.vim/bundle/YouCompleteMe/third_party/ycmd/ycm_core.so")
-    let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
-    let g:ycm_autoclose_preview_window_after_completion = 1
-    let g:ycm_confirm_extra_conf = 0
-else
-    let g:loaded_youcompleteme = 1
-endif
 
 " delimate settings
 let g:delimitMate_expand_cr = 1
