@@ -81,7 +81,7 @@ filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 
 "colorscheme molokai
-colorscheme molokai
+colorscheme Redeye_Green
 " custom colorscheme config
 if g:colors_name == "molokai"
     let g:airline_theme = 'powerlineish'
@@ -232,3 +232,5 @@ au FileType html let b:delimitMate_matchpairs = "<:>,(:),[:],{:}"
 
 " easytags settings
 let g:easytags_async = 1
+
+hi Normal ctermbg=none
