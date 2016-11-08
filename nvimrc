@@ -20,7 +20,6 @@ endif
 set number
 set cursorline
 syntax enable
-"set background=dark " sometimes conflicts with color scheme
 
 au! FileType python setl nosmartindent " disable smartindent for python
 set smartcase
@@ -42,8 +41,8 @@ set iskeyword-=_
 call matchadd('ColorColumn', '\%81v', 100)
 
 " enable wordwrap and linebreak (instead of splitting the words)
-"set wrap
-"set linebreak
+set wrap
+set linebreak
 
 set matchpairs+=<:> " Allows ci< to work between <...>
 set scrolloff=5     " Set max and min cursor position before scrolling
@@ -80,7 +79,6 @@ filetype plugin on
 " Set autocompletion based on languge (^x ^o)
 set omnifunc=syntaxcomplete#Complete
 
-"colorscheme molokai
 colorscheme Redeye_Green
 " custom colorscheme config
 if g:colors_name == "molokai"
