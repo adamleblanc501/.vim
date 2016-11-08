@@ -1,6 +1,3 @@
-[submodule "bundle/vim-surround"]
-	path = bundle/vim-surround
-	url = https://github.com/tpope/vim-surround
 [submodule "bundle/vim-gitgutter"]
 	path = bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
@@ -10,10 +7,4 @@
 [submodule "bundle/delimitMate"]
 	path = bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate
-[submodule "bundle/cs-jellybeans"]
-	path = bundle/cs-jellybeans
-	url = https://github.com/nanotech/jellybeans.vim
-[submodule "bundle/vim-misc"]
-	path = bundle/vim-misc
-	url = https://github.com/xolox/vim-misc
 [submodule "bundle/vim-easytags"]
